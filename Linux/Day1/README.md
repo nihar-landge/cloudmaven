@@ -25,6 +25,7 @@ Completed all **4 mandatory Hands-On Labs** from the Day 1 PDF.
 
 ## 📁 Files Created
 
+```bash
 Linux/Day1/
 ├── myfile.txt
 ├── practice.txt
@@ -35,7 +36,7 @@ Linux/Day1/
 ├── Lab1_Cat.jpg
 ├── Lab1_BackgroundProcess+Killprocess.jpg
 └── Lab1_Vim.jpg
-
+```
 ---
 
 ## 🛠 Key Commands Demonstrated
