@@ -17,9 +17,9 @@ Completed all **4 mandatory Hands-On Labs** from the Day 1 PDF.
 | Lab | Task | Status | Screenshot |
 |-----|------|--------|------------|
 | Lab 1 | User Management (create, switch, verify) | ✅ Done | [Lab1_CreateUser.jpg](Lab1_CreateUser.jpg)<br>[Lab1_SwitchUser.jpg](Lab1_SwitchUser.jpg) |
-| Lab 2 | File Permissions & Ownership (chmod, chown, test access) | ✅ Done | [Lab1_Permission.jpg](Lab1_Permission.jpg)<br>[Lab1_Cat.jpg](Lab1_Cat.jpg) |
+| Lab 2 | File Permissions & Ownership (chmod, chown, test access) | ✅ Done | [Lab1_Permission.jpg](Lab1_Permission.jpg) |
 | Lab 3 | Process Control (background + kill) | ✅ Done | [Lab1_BackgroundProcess+Killprocess.jpg](Lab1_BackgroundProcess+Killprocess.jpg) |
-| Lab 4 | Text Editor (vim) | ✅ Done | [Lab1_Vim.jpg](Lab1_Vim.jpg) |
+| Lab 4 | Text Editor (vim) | ✅ Done | [Lab1_Vim.jpg](Lab1_Vim.jpg)<br>[Lab1_Cat.jpg](Lab1_Cat.jpg) |
 
 ---
 
