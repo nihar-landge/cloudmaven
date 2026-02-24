@@ -1,0 +1,4 @@
+Hello from Nihar!
+This is my Day 1 Linux hands on lab.
+I have have completed User mangment, Permissions, Process Control & vim.
+
