@@ -15,6 +15,7 @@
 Default file base permission is `0666`. With `umask 0002`, the result is `0666 - 0002 = 0664` → `rw-rw-r--` (owner and group can read/write, others can only read).
 
 📸 Screenshot: `Screenshot-2026-02-27-at-1.21.46-PM.jpg`
+![alt text](<screenshots/Screenshot 2026-02-27 at 1.21.46 PM.png>)
 
 ---
 
