@@ -119,33 +119,29 @@ that must never be pushed to a public repository.
 
 ### Q5 — git merge vs git rebase
 
-`git merge` combines two branches by creating a **merge commit**, preserving the
-full history of both branches exactly as it happened. `git rebase` moves your
-branch commits on top of another branch, creating a **linear history** with no
-merge commits. The main advantage of rebase is a cleaner, easier-to-read commit
-history. However, you should never rebase commits that have already been pushed
-to a shared branch, as it rewrites history and causes problems for other
-developers.
+`git merge` combines two branches and creates a merge commit, preserving full
+history. `git rebase` moves your commits on top of another branch, giving a
+clean linear history. Never rebase commits already pushed to a shared branch
+as it rewrites history and breaks others' work.
 
 ---
 
 ### Q6 — NGINX Event-Driven vs Apache Thread-per-Connection
 
-NGINX uses an **asynchronous, event-driven architecture** where a small fixed
-number of worker processes handle thousands of connections simultaneously using
-non-blocking I/O. Apache uses a **thread-per-connection model** where each
-request gets its own thread or process, consuming more memory as traffic grows.
-For high-concurrency workloads (thousands of simultaneous requests), NGINX is
-far more efficient because it does not create a new thread for every connection.
-This makes NGINX the preferred choice for modern high-traffic APIs and web
-applications.
+NGINX uses a small number of worker processes to handle thousands of connections
+at once using non-blocking I/O. 
+Apache creates a new thread for every request,
+which wastes memory under high traffic. This makes NGINX faster and more
+efficient for high-traffic websites.
 
 ---
 
 ### Q7 — sites-available vs sites-enabled
 
 `sites-available` stores **all** NGINX site configuration files, whether active
-or not. `sites-enabled` contains only **symlinks** pointing to the configs in
+or not. 
+
+`sites-enabled` contains only **symlinks** pointing to the configs in
 `sites-available` that are currently active. The symlink approach is used because
 it lets you enable or disable a site instantly (`ln -s` to enable, `rm` to
 disable) without deleting or editing the config file. This makes it safe and
@@ -167,24 +163,12 @@ add load balancing or caching without changing the app itself.
 
 ### Q9 — SSL Termination vs SSL Passthrough
 
-In **SSL termination**, the load balancer (NGINX) decrypts the HTTPS traffic and
-forwards plain HTTP to the backend servers — only one certificate is needed on
-the load balancer. In **SSL passthrough**, the load balancer forwards encrypted
-traffic directly to backends, and each backend must handle its own TLS
-decryption with its own certificate. SSL termination is preferred for most
-applications because backends receive plain HTTP with no CPU overhead for
-decryption, and the load balancer can inspect, log, and modify requests. SSL
-passthrough is used only when end-to-end encryption compliance is required
-(e.g., PCI DSS strict mode).
+In **SSL termination**, in it this the nginx Decrypt the encryted thing, and internally they send data at http
+In **SSL passthrough**, in this the nginx just forwarded the encrypted data to docker where the docker decrypt there
 
 ---
 
 ### Q10 — try_files $uri $uri/ =404
 
-The `try_files $uri $uri/ =404` directive tells NGINX to check for a file or
-directory in a specific order before returning an error. For a request to
-`/about`, NGINX first looks for an **exact file** at the root path (`/about`),
-then checks if a **directory** named `/about/` exists with an index file, and
-finally returns a **404 error** if neither is found. This is the standard pattern
-for static sites because it handles both direct file requests and directory-based
-routing cleanly without unnecessarily passing requests to a backend.
+The `try_files $uri $uri/ =404` 
+this tells that first $uri is file name then if not check for if that was dir  $uri if not then show 404
