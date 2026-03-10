@@ -1,6 +1,6 @@
 # Git & NGINX Assessment
 **Author:** Nihar Landge  
-**Repo:** git-nginx-assessment
+**Repo:** git-nginx-assessment : https://github.com/nihar-landge/git-nginx-assessment
 
 ---
 
