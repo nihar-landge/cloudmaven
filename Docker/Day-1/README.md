@@ -7,14 +7,14 @@ Docker is an open-source platform that packages applications and dependencies in
 ## Containers vs VMs
 
 **Containers**
-- 1. Shares the OS kernel (i.e., lightweight so if we run multiple containers, they're also lightweight)
-- 2. Takes seconds to boot
-- 3. Low resource usage
+- Shares the OS kernel (i.e., lightweight so if we run multiple containers, they're also lightweight)
+- Takes seconds to boot
+- Low resource usage
 
 **VMs**
-- 1. They have Guest OS; if there are multiple VMs, then Multiple Guest OS on the Parent OS
-- 2. Takes minutes to boot
-- 3. High RAM/Disk usage 
+- They have Guest OS; if there are multiple VMs, then Multiple Guest OS on the Parent OS
+- Takes minutes to boot
+- High RAM/Disk usage 
 
 ## Docker Commands
 
