@@ -1,7 +1,9 @@
 # Simple React Full Stack — Dockerized
 
 Dockerized version of [crsandeep/simple-react-full-stack](https://github.com/crsandeep/simple-react-full-stack).
-Two separate containers (frontend + backend) connected via Docker network with Nginx as reverse proxy.
+**Source Repo**: [nihar-landge/simple-react-full-stack](https://github.com/nihar-landge/simple-react-full-stack)
+
+Two separate containers (frontend + backend) connected via Docker network (`app-network`) with Nginx as reverse proxy.
 
 ## Architecture
 
@@ -48,7 +50,7 @@ docker run -d --name frontend --network app-network -p 8081:80 simple-react-fron
 
 - **Backend**: Express runs on port 8080 (internal only, not exposed to host)
 - **Frontend**: Nginx serves React build files and proxies `/api` requests to backend container
-- **Networking**: Both containers on `app-network`, Nginx reaches backend using `http://backend:8080`
+- **Networking**: Both containers **must** be on the same `app-network`. Nginx reaches backend using `http://backend:8080`
 
 
 ## GHCR Images
