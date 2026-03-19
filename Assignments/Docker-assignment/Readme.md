@@ -62,3 +62,41 @@ docker run -d --name my-library-app -p 5000:5000 library-app:v1
 Then open `http://localhost:5000` in your browser.
 
 ---
+
+## 📘 Docker Concepts (Image vs Container vs Volume vs Network)
+
+- **Image**: A read-only, versioned filesystem template built from a `Dockerfile`. Images are immutable artifacts that can be pushed/pulled from registries.
+- **Container**: A running instance of an image. Containers add a writable layer on top of the image and run isolated processes.
+- **Volume**: A persistent data store managed by Docker. Volumes survive container restarts and removals, and are the recommended way to keep state (databases, logs, etc.).
+- **Network**: A virtual network that allows containers to communicate (and optionally connect to the host or external networks). Docker provides default networks (bridge, host, none) and supports custom user-defined networks.
+
+---
+
+## 🧹 Cleaning up Unused Docker Resources
+
+Docker can accumulate images, containers, volumes, and networks over time. The following commands help reclaim disk space:
+
+- `docker system df` — show disk usage.
+- `docker container prune` — remove stopped containers.
+- `docker image prune` — remove dangling images.
+- `docker volume prune` — remove unused volumes.
+- `docker network prune` — remove unused networks.
+- `docker system prune -a` — remove all unused containers, networks, and images (use with caution).
+
+> ⚠️ Always double-check what will be removed before running prune commands, especially in shared environments.
+
+---
+
+## 🔒 Best Practices for Secure Dockerfiles
+
+- **Use minimal base images** (e.g., `python:3.11-slim`, `alpine`) to reduce the attack surface.
+- **Pin versions** (e.g., `python:3.11.6-slim`) to avoid unintended changes when upstream images update.
+- **Use multi-stage builds** to keep runtime images small and avoid shipping build-time dependencies.
+- **Run as a non-root user** whenever possible (e.g., `USER appuser`).
+- **Avoid storing secrets** in the Dockerfile or image (use build args, environment variables, or secret management solutions).
+- **Limit layers** by combining commands where sensible (e.g., `RUN apt-get update && apt-get install -y ... && rm -rf /var/lib/apt/lists/*`).
+- **Scan images** regularly for vulnerabilities using tools like `docker scan`, `trivy`, or `clair`.
+- **Set explicit ports and health checks** (e.g., `HEALTHCHECK CMD curl -f http://localhost:5000/health || exit 1`).
+
+---
+>>>>>>> 1e1e138 (Update Docker assignment README with documentation section)
