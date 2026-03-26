@@ -219,7 +219,7 @@ Slack notifications on success or failure.
 
 ## ✅ Task 5 — Documentation
 
-Full documentation is available in [LAB-NOTES.md](./LAB-NOTES.md)
+Full documentation is available in [LAB-NOTES.md](https://github.com/nihar-landge/App-Repositor/blob/master/LAB-NOTES.md)
 
 ---
 
